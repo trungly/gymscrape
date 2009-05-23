@@ -1,0 +1,6 @@
+%h2= "Department: #{@dept.name.upcase}"
+%a{:href => "/gymboree"} Back
+%ul
+  - @dept.collections.each do |coll|
+    %li
+      %a{:href => "/gymboree/coll/#{coll.id}"}= coll.name

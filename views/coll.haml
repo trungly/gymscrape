@@ -1,0 +1,9 @@
+%h2= "Department: #{@coll.department.name.upcase}, Collection: #{@coll.name}"
+%a{:href => "/gymboree/dept/#{@coll.department_id}"} Back
+%ul
+  - @coll.products.each do |prod|
+    - if prod.has_any_product_sizes?
+      %li
+        %a{:href => prod.url}
+          = prod.name
+        = prod.product_sizes.map {|ps| ps.html_styled_size_name}.join (' | ')
