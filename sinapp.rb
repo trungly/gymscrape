@@ -25,12 +25,3 @@ get '/style.css' do
   content_type 'text/css'
   sass :style
 end
-
-__END__
-@@ layout
-%html
-  %link{:rel => 'stylesheet', :href=>'/gymboree/style.css', :type => 'text/css'}
-  = yield
-  %p#footer
-    last update:
-    = @latest.formatted_time

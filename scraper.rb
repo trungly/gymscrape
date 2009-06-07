@@ -71,7 +71,8 @@ ProductSize.where("updated_sid != #{@snapshot.id} AND (deleted_sid is null OR de
 end
 
 ### STEP 4: Send an alert email if anything was created or deleted
-if (@send_email_created)
+if (false)
+#if (@send_email_created)
 #if (@send_email_created || @send_email_deleted)
   if (!@send_email_deleted)
     subject = "Something was INTRODUCED to Gymboree.com in the last hour"
